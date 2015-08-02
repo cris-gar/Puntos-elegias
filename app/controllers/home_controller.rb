@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   respond_to :html
 
   def index
-    @users = User.all
+    @users = User.where.not(role_id: 3)
 
     @final = Array.new
 

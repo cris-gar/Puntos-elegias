@@ -13,7 +13,7 @@ class UserController < ApplicationController
   end
 
   def juez
-    @users = User.all
+    @users = User.where.not(role_id: 3)
   end
 
   def update

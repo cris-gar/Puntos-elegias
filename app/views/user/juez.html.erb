@@ -14,9 +14,9 @@
         <tr>
           <td><%= user.nombre %> <%= user.apellido %></td>
           <% if user.role_id == 1 %>
-              <td><%= link_to 'Create juez',  user_path(user.id), method: :put, data: { confirm: 'Are you sure?' }%></td>
+              <td><%= link_to 'Create juez',  user_path(user.id), method: :put, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
           <% else %>
-              <td><%= link_to 'Eliminar juez',  user_path(user.id), method: :put, data: { confirm: 'Are you sure?' }%></td>
+              <td><%= link_to 'Eliminar juez',  user_path(user.id), method: :put, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
           <% end %>
         </tr>
     <% end %>

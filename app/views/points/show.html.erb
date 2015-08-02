@@ -11,9 +11,9 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @point.user %>
+  <strong>Jugador:</strong>
+  <%= @point.user.nombre %> <%= @point.user.apellido %>
 </p>
 
-<%= link_to 'Edit', edit_point_path(@point) %> |
-<%= link_to 'Back', points_path %>
+<%= link_to 'Edit', edit_point_path(@point), class: "btn btn-link" %> |
+<%= link_to 'Back', points_path, class: "btn btn-link" %>

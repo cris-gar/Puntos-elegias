@@ -1,31 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Points</h1>
+<h1>Lista de Puntos</h1>
 
-<table>
-  <thead>
+<div class="table-responsive">
+  <table class="table table-condensed">
+    <thead>
     <tr>
       <th>Cantidad</th>
       <th>Fecha</th>
-      <th>User</th>
+      <th>Jugador</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @points.each do |point| %>
-      <tr>
-        <td><%= point.cantidad %></td>
-        <td><%= point.fecha %></td>
-        <td><%= point.user %></td>
-        <td><%= link_to 'Show', point %></td>
-        <td><%= link_to 'Edit', edit_point_path(point) %></td>
-        <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= point.cantidad %></td>
+          <td><%= point.fecha %></td>
+          <td><%= point.user.nombre %> <%= point.user.apellido %></td>
+          <td><%= link_to 'Mostrar', point, class: "btn btn-primary" %></td>
+          <td><%= link_to 'Editar', edit_point_path(point), class: "btn btn-success" %></td>
+          <td><%= link_to 'Borrar', point, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+</div>
 <br>
-
-<%= link_to 'New Point', new_point_path %>
+<div class="text-center">
+<%= link_to 'New Point', new_point_path, class: "btn btn-link" %>
+</div>

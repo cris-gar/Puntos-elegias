@@ -1,23 +1,18 @@
 Rails.application.routes.draw do
-  get 'user/index'
+  resources :points
 
-  #get 'home/index'
+  get 'home/index'
+  get 'user/juez'
 
   devise_for :users
   resources :tournaments
-  resources :points
-  resources :roles
-  #
-  resources :user
-  get 'home/index'
-  get 'user/juez'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-
+  resources :user
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
