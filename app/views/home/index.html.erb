@@ -1,0 +1,22 @@
+<h1>Tabla General</h1>
+
+<div class="table-responsive">
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th>Jugador</th>
+      <th>Points</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @final.each do |final| %>
+        <tr>
+          <td><%= final[0] %> <%= final[1] %></td>
+          <td><%= final[2] %></td>
+        </tr>
+    <% end %>
+    </tbody>
+
+  </table>
+</div>

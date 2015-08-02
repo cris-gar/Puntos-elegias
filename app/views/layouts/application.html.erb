@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PuntosElegias</title>
+  <title>Elegias</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Home", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+
+            <% if can? :create, Point %>
+                <li><%= link_to "Asignar Puntos", new_point_path %></li>
+            <% end %>
+
+            <% if can? :update, User %>
+                <li>
+                  <%= link_to "Editar Perfil", edit_user_registration_path(current_user)%>
+                </li>
+            <% end %>
+
+            <% if current_user.admin? %>
+                <li><%= link_to "Asignar Juez", user_juez_path %></li>
+            <% end %>
+
+            <% if current_user.comun? || current_user.juez? %>
+                <li><%= link_to "Mis Puntos", user_path(current_user) %></li>
+            <% end %>
+
+            <% if current_user.admin? %>
+                <li><%= link_to "Crear Torneo",  new_tournament_path  %></li>
+            <% end %>
+
+            <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li>
+
+        <%else %>
+            <li>
+              <%= link_to "Ingresar", new_user_session_path%>
+            </li>
+            <li>
+              <%= link_to "Registrarse", new_user_registration_path%>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

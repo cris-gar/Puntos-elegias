@@ -5,11 +5,24 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
+    if user.admin?
+      can :manage, :all
+    elsif user.juez?
+      can :read, User
+      can :read, Point
+      can :create, Point
+      can :update, Point do |point|
+        point.try(:user) == user
+      end
+      can :update, User do |use|
+        use.try(:user) == user
+      end
+    elsif user.comun?
+      can :read, User
+      can :update, User do |use|
+        use.try(:user) == user
+      end
+    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

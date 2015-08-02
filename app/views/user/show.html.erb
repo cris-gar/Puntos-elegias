@@ -1,0 +1,24 @@
+<h1>Hola <%= @user.nombre %>  <% @user.apellido %> </h1>
+
+<h4>Total Punto</h4>
+<h5><%= @user.points.sum(:cantidad) %></h5>
+
+<div class="table-responsive">
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th>Puntos</th>
+      <th>Fecha</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @points.each do |point| %>
+        <tr>
+          <td><%= point.cantidad %></td>
+          <td><%= point.fecha %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
