@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_inicio: 2015-08-01
+  fecha_termino: 2015-08-01
+  puntos_minimo: 1
+  jugadores_maximo: 1
+
+two:
+  fecha_inicio: 2015-08-01
+  fecha_termino: 2015-08-01
+  puntos_minimo: 1
+  jugadores_maximo: 1

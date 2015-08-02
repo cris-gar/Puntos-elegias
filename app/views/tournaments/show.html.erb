@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @tournament.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Fecha termino:</strong>
+  <%= @tournament.fecha_termino %>
+</p>
+
+<p>
+  <strong>Puntos minimo:</strong>
+  <%= @tournament.puntos_minimo %>
+</p>
+
+<p>
+  <strong>Jugadores maximo:</strong>
+  <%= @tournament.jugadores_maximo %>
+</p>
+
+<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
+<%= link_to 'Back', tournaments_path %>

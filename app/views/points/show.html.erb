@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @point.cantidad %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @point.fecha %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @point.user %>
+</p>
+
+<%= link_to 'Edit', edit_point_path(@point) %> |
+<%= link_to 'Back', points_path %>
