@@ -20,12 +20,12 @@ Things you may want to cover:
 
 * Database initialization
     Para iniciar la bdd debe correr en la terminal el comando:
-    <li><i>rake db:migrate</i></li>
+    rake db:migrate
 
 * How to run the test suite
     Para correr este sistema de forma local, debe ubicarce con su terminal en el proyecto en si, luego escribir los comandos:
-     <li><i>rake db:seed</i><li>
-     <li><i>rails s</i></li>
+     rake db:seed
+     rails s
      Luego ingrese a su navegador favorito e ingrese a localhost:3000 para probar, a excepción que use IE, entonces aviantese de un puente;
 
 * Licencia
