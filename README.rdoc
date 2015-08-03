@@ -11,6 +11,7 @@ Things you may want to cover:
 * System dependencies
     Instalar Ruby 2.2.1, como opcional si trabaja en una maquina con linux o mac se recomienda instalar Ruby mendiante RVM
     Instalar RoR 4.2.3
+    Instalar SqlLite3
 
 * Configuration
     Hasta el Momento sin configuraciones necesarias
