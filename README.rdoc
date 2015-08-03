@@ -6,23 +6,24 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+    > 2.2.1
 
 * System dependencies
+    > Instalar Ruby 2.2.1, como opcional si trabaja en una maquina con linux o mac se recomienda instalar Ruby mendiante RVM, para esto vea este [video](https://www.youtube.com/watch?v=_K3RxCRQTIo&list=PLQCgNGUqLK4loqS6mVamB_yRUvA2sMcF2&index=2)
+    > Instalar RoR 4.2.3
 
 * Configuration
+    > Hasta el Momento sin configuraciones necesarias
 
 * Database creation
+    > Las migraciones necesarias para la creacion de la bdd ya vienen en este repositorio
 
 * Database initialization
+    > Para iniciar la bdd debe correr en la terminal el comando _rake db:migrate_
 
 * How to run the test suite
+    >Para correr este sistema de forma local, debe ubicarce con su terminal en el proyecto en si, luego escribir los comandos:
+     * _rake db:seed_
+     * _rails s_
+     >Luego ingrese a su navegador favorito e ingrese a localhost:3000 para probar, a excepción que use IE, entonces aviantese de un puente;
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

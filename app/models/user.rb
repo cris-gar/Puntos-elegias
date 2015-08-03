@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :points
 
+  validates :nombre, :apellido,  presence: true
+
   before_save :asig_role_id
 
   def asig_role_id

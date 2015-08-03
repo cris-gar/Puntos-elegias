@@ -1,33 +1,38 @@
 <%= form_for(@tournament) do |f| %>
-  <% if @tournament.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tournament.errors.count, "error") %> prohibited this tournament from being saved:</h2>
+    <% if @tournament.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@tournament.errors.count, "error") %> prohibited this tournament from being saved:</h2>
 
-      <ul>
-      <% @tournament.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @tournament.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group form-inline">
+      <%= f.label :fecha_inicio %><br>
+      <%= f.date_select :fecha_inicio,{ :order => [:day, :month, :year ],  }, class: "form-control" %>
     </div>
-  <% end %>
+    <div class="form-group form-inline">
+      <%= f.label :fecha_termino %><br>
+      <%= f.date_select :fecha_termino,{ :order => [:day, :month, :year ],  }, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :puntos_minimo %><br>
+      <%= f.number_field :puntos_minimo, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :jugadores_maximo %><br>
+      <%= f.number_field :jugadores_maximo, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :fecha_inicio %><br>
-    <%= f.date_select :fecha_inicio %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_termino %><br>
-    <%= f.date_select :fecha_termino %>
-  </div>
-  <div class="field">
-    <%= f.label :puntos_minimo %><br>
-    <%= f.number_field :puntos_minimo %>
-  </div>
-  <div class="field">
-    <%= f.label :jugadores_maximo %><br>
-    <%= f.number_field :jugadores_maximo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="text-center">
+      <% if @tournament.new_record? %>
+          <%= f.submit "Crear Torneo" ,class: "btn btn-primary" %>
+      <% else %>
+          <%= f.submit "Editar Torneo" ,class: "btn btn-success" %>
+      <% end %>
+    </div>
 <% end %>
