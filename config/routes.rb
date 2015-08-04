@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'user/juez'
+  delete 'user/points'
 
   devise_for :users
   resources :tournaments

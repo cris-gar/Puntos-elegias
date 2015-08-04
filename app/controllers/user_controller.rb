@@ -26,9 +26,19 @@ class UserController < ApplicationController
     redirect_to user_juez_path
   end
 
+  def points
+    @points = Point.all
+    @points.destroy_all
+    respond_to do |format|
+      format.html { redirect_to points_url, notice: 'Todos los puntos han sido borrados.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
   def set_user
     @users = User.find(params[:id])
   end
-  
+
+
 end

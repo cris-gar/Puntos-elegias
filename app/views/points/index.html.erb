@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lista de Punt</h1>
+<h1>Lista de Puntos</h1>
 
+<% if current_user.admin? && @points.count > 0%>
+    <%= link_to "Limpiar Puntos", user_points_path, method: :delete, data: { confirm: 'Esta seguro de borrar todos los puntos de los jugadores?' },class: "btn btn-danger"  %>
+<% end %>
+<hr>
 <div class="table-responsive">
   <table class="table table-condensed">
     <thead>
