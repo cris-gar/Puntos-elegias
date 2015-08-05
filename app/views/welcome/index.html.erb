@@ -23,7 +23,7 @@
 
     <tbody>
     <% @final.each do |final| %>
-        <% if( @tournament.puntos_minimo <= final[3]) %>
+        <% if( Tournament.exists?(@tournament) && @tournament.puntos_minimo <= final[3]) %>
             <tr class="success">
               <td class="success"><%= final[0] %></td>
               <td class="success"><%= final[1] %> <%= final[2] %></td>
@@ -31,6 +31,7 @@
             </tr>
         <% else%>
             <tr>
+              <td><%= final[0] %></td>
               <td><%= final[1] %> <%= final[2] %></td>
               <td><%= final[3] %></td>
             </tr>
