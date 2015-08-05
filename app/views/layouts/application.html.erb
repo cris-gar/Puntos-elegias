@@ -45,7 +45,7 @@
                 <li><%= link_to "Crear Torneo",  new_tournament_path  %></li>
             <% end %>
 
-            <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Cerrar sesión( "+ current_user.nombre+" "+current_user.apellido+" )", destroy_user_session_path, method: :delete %></li>
 
         <%else %>
             <li>
