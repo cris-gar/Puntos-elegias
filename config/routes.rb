@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :points
 
-  #get 'welcome/index'
+  get 'welcome/index'
   get 'user/juez'
   delete 'user/points'
 
